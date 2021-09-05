@@ -1,0 +1,11 @@
+<!--object_view is comes with the list view we no need to explicitly specify it in the view.py file-->
+<!--We can direct use it in html file using jinger IMPORTANT-->
+{% extends "blog/base.html" %}
+{% block content %}
+    {% for post in object_list %}
+        <div class = "post_entry">
+            <h2><a href="{% url 'post_details' post.pk %}" class="link-link">{{post.title}}</a><h4> Author : {{post.authoe}}</h4></h2>
+            <p>{{ post.body}}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
